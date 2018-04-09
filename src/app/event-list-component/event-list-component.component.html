@@ -1,0 +1,14 @@
+<p>
+  <!-- event-list-component works! {{data[0].MonthNumber}} -->
+</p>
+
+<div class="turnt-container">
+  <div class="card month" *ngFor="let month of data">
+    <div class="card-header">
+      {{month.Month}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let day of month.Days" class="list-group-item">Test</li>
+    </ul>
+  </div>
+</div>

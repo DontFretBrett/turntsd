@@ -1,14 +1,59 @@
 .turnt-container {
-  display: flex;
-  flex-direction: column;
+  .card-header.month {
+    background-color: #c8b383;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+  }
 
-  div.month {
-    flex-grow: 1;
+  .card-header.day {
+    background-color: #cce5ff;
+  }
+  .event-container {
     display: flex;
     flex-direction: row;
+    padding: 5px;
 
-    .event {
+    .turnt-event {
+      text-align: center;
       flex-grow: 1;
+    }
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .month-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+
+    .card {
+      display: inline-block;
+      flex-grow: 1;
+      margin: 5px;
+      padding: 0;
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .turnt-event {
+        padding: 10px;
+
+        .ticket-button {
+          width: 100%;
+          margin-bottom: 5px;
+          max-width: 240px;
+        }
+
+        .venue {
+          font-weight: bold;
+        }
+      }
     }
   }
 }

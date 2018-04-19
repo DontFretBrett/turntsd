@@ -22,4 +22,8 @@ export class EventListComponentComponent implements OnInit {
       this.data = d.SiteDataByMonth;
     });
   }
+
+  toggleExpand = function(month) {
+    month.Expanded = !month.Expanded;
+  };
 }

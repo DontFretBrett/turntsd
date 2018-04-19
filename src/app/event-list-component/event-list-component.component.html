@@ -1,14 +1,27 @@
-<p>
-  <!-- event-list-component works! {{data[0].MonthNumber}} -->
-</p>
-
 <div class="turnt-container">
-  <div class="card month" *ngFor="let month of data">
-    <div class="card-header">
+  <div class="card" *ngFor="let month of data">
+    <div class="card-header month" (click)="toggleExpand(month)">
       {{month.Month}}
     </div>
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let day of month.Days" class="list-group-item">Test</li>
-    </ul>
+    <div class="card-body month-body" *ngIf="month.Expanded">
+      <div *ngFor="let day of month.Days" class="card">
+        <div class="car+d-header day">
+          {{day.PrettyDate}}
+        </div>
+        <div class="event-container card-body">
+          <div *ngFor="let event of day.Events" class="turnt-event card">
+            <div>
+              <a target="_blank" [href]="event.EventUrl">
+                <button type="button" *ngIf="event.Prices.length>0" class="btn btn-primary ticket-button">{{event.PricesPretty}}</button>
+                <button type="button" *ngIf="event.Prices.length==0" class="btn btn-primary ticket-button">Event Page</button>
+              </a>
+            </div>
+            {{event.PerformersPretty}}
+            <div class="venue">{{event.Venue.Name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+

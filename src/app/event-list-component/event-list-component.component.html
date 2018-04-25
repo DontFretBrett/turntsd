@@ -2,10 +2,14 @@
   <div class="card" *ngFor="let month of data">
     <div class="card-header month" (click)="toggleExpand(month)">
       {{month.Month}}
+      <div class="pull-right">
+        <i class="fa fa-minus" *ngIf="month.Expanded"></i>
+        <i class="fa fa-plus" *ngIf="!month.Expanded"></i>
+      </div>
     </div>
     <div class="card-body month-body" *ngIf="month.Expanded">
       <div *ngFor="let day of month.Days" class="card">
-        <div class="car+d-header day">
+        <div class="card-header day">
           {{day.PrettyDate}}
         </div>
         <div class="event-container card-body">
@@ -24,4 +28,3 @@
     </div>
   </div>
 </div>
-

@@ -4,6 +4,9 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
+    .pull-right {
+      float: right;
+    }
   }
 
   .card-header.day {
